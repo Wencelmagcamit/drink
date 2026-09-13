@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>For My Love ❤️</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+body{
+    font-family:Georgia,"Times New Roman",serif;
+    background:#08030a;
+    color:white;
+}
+
+#app{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 50% 45%,rgba(255,73,153,.18),transparent 32%),
+        radial-gradient(circle at 20% 20%,rgba(255,180,220,.08),transparent 30%),
+        linear-gradient(145deg,#160611,#090309 55%,#18050f);
+}
+
+#app:before{
+    content:"";
+    position:absolute;
+    inset:-50%;
+    background:conic-gradient(
+        from 0deg,
+        transparent,
+        rgba(255,80,160,.07),
+        transparent 25%,
+        rgba(255,180,220,.04),
+        transparent 50%
+    );
+    animation:rotateBg 20s linear infinite;
+}
+
+@keyframes rotateBg{
+    to{transform:rotate(360deg)}
+}
+
+.stars{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    border-radius:50%;
+    background:white;
+    opacity:.5;
+    animation:twinkle 2s ease-in-out infinite;
+}
+
+@keyframes twinkle{
+    0%,100%{opacity:.15;transform:scale(.7)}
+    50%{opacity:1;transform:scale(1.5)}
+}
+
+/* INTRO */
+
+.intro{
+    position:absolute;
+    inset:0;
+    z-index:50;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:#08030a;
+    transition:opacity 1.2s ease,visibility 1.2s;
+}
+
+.intro.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.introInner{
+    padding:30px;
+    animation:introIn 1.5s ease;
+}
+
+@keyframes introIn{
+    from{
+        opacity:0;
+        transform:translateY(30px) scale(.95);
+    }
+    to{
+        opacity:1;
+        transform:none;
+    }
+}
+
+.introHeart{
+    font-size:65px;
+    margin-bottom:25px;
+    animation:heartbeat 1.4s infinite;
+    filter:drop-shadow(0 0 25px #ff4f9a);
+}
+
+@keyframes heartbeat{
+    0%,100%{transform:scale(1)}
+    15%{transform:scale(1.18)}
+    30%{transform:scale(1)}
+    45%{transform:scale(1.12)}
+}
+
+.introTitle{
+    font-size:clamp(30px,8vw,55px);
+    letter-spacing:2px;
+    margin-bottom:12px;
+}
+
+.introText{
+    color:#e8b9cf;
+    font-size:16px;
+    margin-bottom:30px;
+}
+
+.startBtn{
+    border:1px solid rgba(255,255,255,.35);
+    background:linear-gradient(135deg,#ff4f98,#b92362);
+    color:white;
+    padding:15px 32px;
+    border-radius:50px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:
+        0 0 30px rgba(255,65,145,.25),
+        inset 0 1px rgba(255,255,255,.3);
+    transition:.3s;
+}
+
+.startBtn:hover{
+    transform:translateY(-3px) scale(1.03);
+    box-shadow:0 0 45px rgba(255,65,145,.45);
+}
+
+/* MAIN */
+
+.scene{
+    position:absolute;
+    inset:0;
+    z-index:5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.content{
+    width:100%;
+    max-width:600px;
+    padding:20px;
+    text-align:center;
+    position:relative;
+    z-index:4;
+}
+
+.topTitle{
+    font-size:clamp(28px,7vw,47px);
+    font-weight:bold;
+    letter-spacing:1px;
+    text-shadow:0 0 20px rgba(255,90,160,.35);
+    margin-bottom:8px;
+}
+
+.topSubtitle{
+    color:#dcb1c5;
+    font-size:15px;
+    margin-bottom:20px;
+}
+
+/* DRINK */
+
+.drinkArea{
+    height:430px;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.shadow{
+    position:absolute;
+    width:220px;
+    height:45px;
+    border-radius:50%;
+    bottom:42px;
+    background:rgba(255,52,142,.22);
+    filter:blur(20px);
+    transition:.5s;
+}
+
+.cup{
+    position:relative;
+    width:165px;
+    height:270px;
+    cursor:pointer;
+    transform-origin:50% 90%;
+    filter:drop-shadow(0 25px 25px rgba(0,0,0,.55));
+    transition:filter .3s;
+}
+
+.cup:hover{
+    filter:drop-shadow(0 25px 30px rgba(255,60,150,.35));
+}
+
+.cupBody{
+    position:absolute;
+    bottom:0;
+    left:5px;
+    width:155px;
+    height:215px;
+    border:4px solid rgba(255,255,255,.9);
+    border-top:none;
+    border-radius:15px 15px 38px 38px;
+    overflow:hidden;
+    background:linear-gradient(
+        100deg,
+        #dc286e,
+        #ff4f98 40%,
+        #ff82b6 65%,
+        #d72269
+    );
+    box-shadow:
+        inset 8px 0 20px rgba(255,255,255,.12),
+        inset -10px 0 20px rgba(90,0,40,.15);
+}
+
+.cupBody:before{
+    content:"";
+    position:absolute;
+    top:-30px;
+    left:25px;
+    width:32px;
+    height:270px;
+    transform:rotate(10deg);
+    background:rgba(255,255,255,.17);
+    z-index:4;
+}
+
+.liquid{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:78%;
+    background:linear-gradient(
+        to bottom,
+        rgba(255,115,174,.8),
+        rgba(218,28,102,.9)
+    );
+}
+
+.liquid:before{
+    content:"";
+    position:absolute;
+    top:-7px;
+    left:-5%;
+    width:110%;
+    height:15px;
+    border-radius:50%;
+    background:rgba(255,180,215,.5);
+    animation:liquidWave 2s ease-in-out infinite;
+}
+
+@keyframes liquidWave{
+    0%,100%{transform:translateX(-2%)}
+    50%{transform:translateX(2%)}
+}
+
+.bubble{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,.3);
+    bottom:15px;
+    animation:bubble 3s linear infinite;
+    z-index:3;
+}
+
+.b1{width:8px;height:8px;left:25px}
+.b2{width:12px;height:12px;left:72px;animation-delay:.8s}
+.b3{width:6px;height:6px;right:25px;animation-delay:1.5s}
+.b4{width:9px;height:9px;right:55px;animation-delay:2s}
+
+@keyframes bubble{
+    0%{
+        transform:translateY(0);
+        opacity:.1;
+    }
+    30%{opacity:.7}
+    100%{
+        transform:translateY(-160px);
+        opacity:0;
+    }
+}
+
+.lid{
+    position:absolute;
+    top:25px;
+    left:0;
+    z-index:8;
+    width:165px;
+    height:30px;
+    border-radius:20px;
+    background:linear-gradient(#fff,#eaeaea);
+    border:4px solid white;
+    box-shadow:0 7px 12px rgba(0,0,0,.25);
+}
+
+.lid:after{
+    content:"";
+    position:absolute;
+    left:8px;
+    right:8px;
+    bottom:-6px;
+    height:10px;
+    border-radius:50%;
+    background:#ddd;
+}
+
+.straw{
+    position:absolute;
+    z-index:9;
+    width:14px;
+    height:115px;
+    left:94px;
+    top:-68px;
+    border-radius:10px;
+    background:linear-gradient(90deg,#fff,#ffd1e4,#fff);
+    transform:rotate(7deg);
+    box-shadow:0 3px 10px rgba(0,0,0,.25);
+}
+
+.strawTip{
+    position:absolute;
+    width:14px;
+    height:38px;
+    right:-18px;
+    top:-6px;
+    border-radius:10px;
+    background:white;
+    transform:rotate(-58deg);
+}
+
+.label{
+    position:absolute;
+    z-index:10;
+    top:72px;
+    left:21px;
+    width:112px;
+    padding:13px 5px;
+    text-align:center;
+    background:linear-gradient(
+        145deg,
+        rgba(255,255,255,.98),
+        rgba(255,225,239,.98)
+    );
+    color:#e92e79;
+    border-radius:20px;
+    font-family:Arial,sans-serif;
+    font-weight:900;
+    font-size:21px;
+    box-shadow:0 8px 18px rgba(90,0,40,.18);
+}
+
+.label span{
+    display:block;
+    margin-top:5px;
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+/* DRINK ANIMATION */
+
+.drinking .cup{
+    animation:sip 3.5s cubic-bezier(.65,-.25,.25,1.25) forwards;
+}
+
+@keyframes sip{
+    0%{
+        transform:translateY(0) rotate(0) scale(1);
+    }
+    12%{
+        transform:translateY(-12px) rotate(-3deg) scale(1.02);
+    }
+    28%{
+        transform:translateY(-55px) rotate(-14deg) scale(1.04);
+    }
+    43%{
+        transform:translateY(-95px) rotate(-25deg) scale(1.06);
+    }
+    58%{
+        transform:translateY(-100px) rotate(-29deg) scale(1.07);
+    }
+    72%{
+        transform:translateY(-85px) rotate(-22deg) scale(1.05);
+    }
+    88%{
+        transform:translateY(-25px) rotate(-7deg) scale(1.02);
+    }
+    100%{
+        transform:translateY(0) rotate(0) scale(1);
+    }
+}
+
+.drinking .shadow{
+    animation:shadowPulse 3.5s ease forwards;
+}
+
+@keyframes shadowPulse{
+    0%,100%{transform:scale(1);opacity:.3}
+    50%{transform:scale(1.7);opacity:.08}
+}
+
+.instruction{
+    position:absolute;
+    bottom:18px;
+    width:100%;
+    left:0;
+    color:#d9b0c5;
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    animation:instruction 2s infinite;
+}
+
+@keyframes instruction{
+    0%,100%{opacity:.45}
+    50%{opacity:1}
+}
+
+/* BURST */
+
+.burst{
+    position:fixed;
+    left:50%;
+    top:50%;
+    z-index:20;
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    transform:translate(-50%,-50%) scale(.2);
+    pointer-events:none;
+}
+
+.burst.active{
+    animation:burst 1.5s ease-out forwards;
+}
+
+@keyframes burst{
+    0%{
+        background:rgba(255,255,255,.9);
+        box-shadow:
+            0 0 20px 5px #fff,
+            0 0 80px 20px #ff54a0;
+        transform:translate(-50%,-50%) scale(.2);
+        opacity:1;
+    }
+    100%{
+        box-shadow:0 0 0 400px rgba(255,70,150,0);
+        transform:translate(-50%,-50%) scale(8);
+        opacity:0;
+    }
+}
+
+/* PARTICLES */
+
+.particle{
+    position:fixed;
+    z-index:30;
+    pointer-events:none;
+    left:50%;
+    top:50%;
+    animation:fly 3s cubic-bezier(.15,.75,.3,1) forwards;
+}
+
+@keyframes fly{
+    0%{
+        transform:translate(-50%,-50%) scale(.2) rotate(0);
+        opacity:1;
+    }
+    100%{
+        transform:translate(var(--x),var(--y))
+        scale(1.3)
+        rotate(var(--r));
+        opacity:0;
+    }
+}
+
+/* ENVELOPE */
+
+.envelopeScreen{
+    position:fixed;
+    inset:0;
+    z-index:40;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,74,151,.15),
+            rgba(5,1,7,.95)
+        );
+    opacity:0;
+    pointer-events:none;
+    transition:opacity 1s ease;
+}
+
+.envelopeScreen.show{
+    opacity:1;
+    pointer-events:auto;
+}
+
+.envelopeWrap{
+    position:relative;
+    width:300px;
+    height:210px;
+    perspective:900px;
+    animation:envelopeIn 1s cubic-bezier(.17,.89,.32,1.28);
+}
+
+@keyframes envelopeIn{
+    from{
+        opacity:0;
+        transform:translateY(50px) scale(.7) rotateX(20deg);
+    }
+    to{
+        opacity:1;
+        transform:none;
+    }
+}
+
+.envelope{
+    position:absolute;
+    inset:0;
+    background:#f8dbe8;
+    border-radius:5px;
+    box-shadow:0 25px 60px rgba(0,0,0,.5);
+    overflow:visible;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.envelope:hover{
+    transform:scale(1.03);
+}
+
+.envelope:before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        135deg,
+        transparent 50%,
+        #e9bdd0 50%
+    );
+    clip-path:polygon(0 0,50% 50%,100% 0);
+}
+
+.envelope:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        45deg,
+        transparent 50%,
+        #edc5d6 50%
+    );
+    clip-path:polygon(0 100%,50% 50%,100% 100%);
+}
+
+.seal{
+    position:absolute;
+    z-index:10;
+    left:50%;
+    top:50%;
+    width:52px;
+    height:52px;
+    transform:translate(-50%,-50%);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(145deg,#ff5b9e,#c91e61);
+    box-shadow:0 0 30px rgba(255,73,150,.5);
+    font-size:25px;
+    animation:sealPulse 1.5s infinite;
+}
+
+@keyframes sealPulse{
+    0%,100%{box-shadow:0 0 20px rgba(255,73,150,.35)}
+    50%{box-shadow:0 0 40px rgba(255,73,150,.8)}
+}
+
+/* LETTER */
+
+.letterScreen{
+    position:fixed;
+    inset:0;
+    z-index:60;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,110,174,.2),
+            rgba(4,1,6,.95)
+        );
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .8s;
+}
+
+.letterScreen.show{
+    opacity:1;
+    pointer-events:auto;
+}
+
+.letter{
+    width:100%;
+    max-width:450px;
+    max-height:88vh;
+    overflow:auto;
+    padding:38px 28px;
+    border-radius:25px;
+    background:linear-gradient(145deg,#fff,#ffeaf4);
+    color:#555;
+    text-align:center;
+    box-shadow:0 30px 100px rgba(0,0,0,.55);
+    transform:translateY(80px) scale(.8);
+    transition:transform 1s cubic-bezier(.17,.89,.32,1.28);
+}
+
+.letterScreen.show .letter{
+    transform:translateY(0) scale(1);
+}
+
+.letterHeart{
+    font-size:58px;
+    animation:heartbeat 1.4s infinite;
+}
+
+.letter h2{
+    color:#e72e7b;
+    font-size:30px;
+    margin:12px 0 20px;
+}
+
+#typedText{
+    font-size:17px;
+    line-height:1.8;
+    min-height:190px;
+}
+
+.signature{
+    color:#e72e7b;
+    font-size:18px;
+    font-weight:bold;
+    margin-top:20px;
+    opacity:0;
+    transition:1s;
+}
+
+.signature.show{
+    opacity:1;
+}
+
+.replay{
+    margin-top:25px;
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    background:#e73580;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* MUSIC */
+
+.music{
+    position:fixed;
+    right:15px;
+    bottom:15px;
+    z-index:100;
+    padding:10px 15px;
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:30px;
+    background:rgba(255,255,255,.1);
+    backdrop-filter:blur(10px);
+    color:white;
+    opacity:0;
+    pointer-events:none;
+    transition:.5s;
+}
+
+.music.show{
+    opacity:1;
+    pointer-events:auto;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+    .drinkArea{height:390px}
+
+    .cup{
+        transform:scale(.88);
+    }
+
+    .topTitle{
+        font-size:30px;
+    }
+
+    .topSubtitle{
+        font-size:13px;
+    }
+
+    .letter{
+        padding:30px 22px;
+    }
+
+    #typedText{
+        font-size:16px;
+    }
+
+    .envelopeWrap{
+        transform:scale(.88);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="app">
+
+<div class="stars" id="stars"></div>
+
+<!-- INTRO -->
+
+<div class="intro" id="intro">
+    <div class="introInner">
+
+        <div class="introHeart">❤️</div>
+
+        <div class="introTitle">
+            For My Love
+        </div>
+
+        <div class="introText">
+            I made a little surprise for you...
+        </div>
+
+        <button class="startBtn" onclick="enterExperience()">
+            Open My Surprise ✨
+        </button>
+
+    </div>
+</div>
+
+<!-- MAIN -->
+
+<div class="scene">
+
+    <div class="content">
+
+        <div class="topTitle">
+            🥤 Chukie for You
+        </div>
+
+        <div class="topSubtitle">
+            Something sweet for someone special ❤️
+        </div>
+
+        <div class="drinkArea" id="drinkArea">
+
+            <div class="shadow"></div>
+
+            <div class="cup" id="cup" onclick="drink()">
+
+                <div class="straw">
+                    <div class="strawTip"></div>
+                </div>
+
+                <div class="lid"></div>
+
+                <div class="cupBody">
+
+                    <div class="liquid"></div>
+
+                    <div class="bubble b1"></div>
+                    <div class="bubble b2"></div>
+                    <div class="bubble b3"></div>
+                    <div class="bubble b4"></div>
+
+                    <div class="label">
+                        CHUKIE
+                        <span>FOR YOU ❤️</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="instruction" id="instruction">
+                ✨ Tap the Chukie ✨
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- BURST -->
+
+<div class="burst" id="burst"></div>
+
+<!-- ENVELOPE -->
+
+<div class="envelopeScreen" id="envelopeScreen">
+
+    <div class="envelopeWrap">
+
+        <div class="envelope" onclick="openEnvelope()">
+
+            <div class="seal">
+                ❤️
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- LETTER -->
+
+<div class="letterScreen" id="letterScreen">
+
+    <div class="letter">
+
+        <div class="letterHeart">
+            💌
+        </div>
+
+        <h2>
+            A Letter For You
+        </h2>
+
+        <div id="typedText"></div>
+
+        <div class="signature" id="signature">
+            With all my love, ❤️
+        </div>
+
+        <button class="replay" onclick="replay()">
+            ↻ Experience Again
+        </button>
+
+    </div>
+
+</div>
+
+<!-- MUSIC -->
+
+<button class="music" id="musicButton" onclick="toggleMusic()">
+    🎵 Music
+</button>
+
+<audio
+    id="music"
+    src="love-song.mp4"
+    preload="auto"
+    loop>
+</audio>
+
+</div>
+
+<script>
+
+/* STARS */
+
+const stars=document.getElementById("stars");
+
+for(let i=0;i<70;i++){
+
+    const s=document.createElement("div");
+
+    s.className="star";
+
+    s.style.left=Math.random()*100+"%";
+    s.style.top=Math.random()*100+"%";
+    s.style.animationDelay=Math.random()*3+"s";
+    s.style.opacity=.15+Math.random()*.6;
+
+    stars.appendChild(s);
+}
+
+
+/* VARIABLES */
+
+let started=false;
+let musicStarted=false;
+
+const intro=document.getElementById("intro");
+const drinkArea=document.getElementById("drinkArea");
+const instruction=document.getElementById("instruction");
+const burst=document.getElementById("burst");
+const music=document.getElementById("music");
+const musicButton=document.getElementById("musicButton");
+const envelopeScreen=document.getElementById("envelopeScreen");
+const letterScreen=document.getElementById("letterScreen");
+const typedText=document.getElementById("typedText");
+const signature=document.getElementById("signature");
+
+
+/* ENTER */
+
+function enterExperience(){
+
+    intro.classList.add("hide");
+
+}
+
+
+/* DRINK */
+
+function drink(){
+
+    if(started) return;
+
+    started=true;
+
+    instruction.innerHTML="🥤 Drinking...";
+
+    drinkArea.classList.add("drinking");
+
+    /*
+        DRINKING FINISHES
+        BEFORE ENVELOPE APPEARS
+    */
+
+    setTimeout(()=>{
+
+        instruction.innerHTML="✨ Something special...";
+
+        burst.classList.remove("active");
+
+        void burst.offsetWidth;
+
+        burst.classList.add("active");
+
+        createParticles();
+
+    },3500);
+
+
+    /*
+        ENVELOPE APPEARS
+        MUSIC DOES NOT START YET
+    */
+
+    setTimeout(()=>{
+
+        envelopeScreen.classList.add("show");
+
+        instruction.innerHTML="💌 Tap the envelope...";
+
+    },4700);
+
+}
+
+
+/* OPEN ENVELOPE */
+
+function openEnvelope(){
+
+    if(musicStarted) return;
+
+    musicStarted=true;
+
+    /*
+        MUSIC STARTS ONLY
+        WHEN ENVELOPE IS CLICKED
+    */
+
+    music.volume=0;
+
+    const playPromise=music.play();
+
+    if(playPromise!==undefined){
+
+        playPromise.then(()=>{
+
+            musicButton.classList.add("show");
+
+            fadeMusic();
+
+        }).catch(()=>{
+
+            musicButton.classList.add("show");
+
+        });
+
+    }
+
+    createParticles();
+
+    envelopeScreen.classList.remove("show");
+
+    setTimeout(()=>{
+
+        letterScreen.classList.add("show");
+
+        typeLetter();
+
+    },700);
+
+}
+
+
+/* MUSIC FADE */
+
+function fadeMusic(){
+
+    let v=0;
+
+    const timer=setInterval(()=>{
+
+        v+=.015;
+
+        if(v>=.45){
+
+            v=.45;
+
+            clearInterval(timer);
+
+        }
+
+        music.volume=v;
+
+    },100);
+
+}
+
+
+/* MUSIC BUTTON */
+
+function toggleMusic(){
+
+    if(music.paused){
+
+        music.play();
+
+        musicButton.innerHTML="🎵 Music";
+
+    }else{
+
+        music.pause();
+
+        musicButton.innerHTML="🔇 Music";
+
+    }
+
+}
+
+
+/* PARTICLES */
+
+function createParticles(){
+
+    const items=[
+        "❤️",
+        "💕",
+        "💗",
+        "💖",
+        "💘",
+        "✨",
+        "💞",
+        "🌸"
+    ];
+
+    for(let i=0;i<80;i++){
+
+        const p=document.createElement("div");
+
+        p.className="particle";
+
+        p.innerHTML=
+            items[
+                Math.floor(
+                    Math.random()*items.length
+                )
+            ];
+
+        p.style.fontSize=
+            (10+Math.random()*25)+"px";
+
+        p.style.setProperty(
+            "--x",
+            (Math.random()*700-350)+"px"
+        );
+
+        p.style.setProperty(
+            "--y",
+            (Math.random()*700-350)+"px"
+        );
+
+        p.style.setProperty(
+            "--r",
+            (Math.random()*720-360)+"deg"
+        );
+
+        p.style.animationDuration=
+            (2+Math.random()*2)+"s";
+
+        document.body.appendChild(p);
+
+        setTimeout(()=>{
+            p.remove();
+        },4500);
+
+    }
+
+}
+
+
+/* TYPEWRITER */
+
+function typeLetter(){
+
+    const text=
+`Hi, love. ❤️
+
+I made this little surprise just for you.
+
+It may only be a Chukie on a screen, but every little detail was made with you in mind.
+
+I hope this makes you smile, even just for a moment.
+
+Thank you for being someone so special to me.
+
+You deserve all the love, happiness, and beautiful moments in the world.
+
+I love you so much. ❤️`;
+
+    typedText.innerHTML="";
+
+    signature.classList.remove("show");
+
+    let index=0;
+
+    function type(){
+
+        if(index<text.length){
+
+            if(text[index]==="\n"){
+
+                typedText.innerHTML+="<br>";
+
+            }else{
+
+                typedText.innerHTML+=text[index];
+
+            }
+
+            index++;
+
+            setTimeout(
+                type,
+                text[index-1]==="\n"
+                    ?250
+                    :35
+            );
+
+        }else{
+
+            setTimeout(()=>{
+
+                signature.classList.add("show");
+
+            },500);
+
+        }
+
+    }
+
+    type();
+
+}
+
+
+/* REPLAY */
+
+function replay(){
+
+    letterScreen.classList.remove("show");
+
+    envelopeScreen.classList.remove("show");
+
+    music.pause();
+
+    music.currentTime=0;
+
+    musicStarted=false;
+
+    drinkArea.classList.remove("drinking");
+
+    burst.classList.remove("active");
+
+    typedText.innerHTML="";
+
+    signature.classList.remove("show");
+
+    musicButton.classList.remove("show");
+
+    musicButton.innerHTML="🎵 Music";
+
+    instruction.innerHTML="✨ Tap the Chukie ✨";
+
+    started=false;
+
+}
+
+</script>
+
+</body>
+</html>
